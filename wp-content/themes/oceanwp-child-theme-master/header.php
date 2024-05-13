@@ -60,27 +60,28 @@ $lien=get_field('lien_google_maps', 161);
 		</div>
 		<?php echo $description; ?>
 		<div class="popup-details">
-    <div class="popup-address">
-        <p><b>Le lieu</b></p>
-        <?php echo $lieu; ?>
-        <?php if (isset($lien['url'])) : ?>
-           <a class="popup-link" href="<?php echo $lien['url']; ?>" target="<?php echo $lien['target']; ?>">Voir sur Google Maps</a>
-        <?php endif; ?>
-    </div>
-    <div class="popup-address">
+		
+<div class="popup-address">
+    <p><b>Le lieu</b></p>
+    <?php echo $lieu; ?>
+    <?php if (isset($lien['url'])) : ?>
+        <a class="popup-link" href="<?php echo $lien['url']; ?>" target="<?php echo $lien['target']; ?>">Voir sur Google Maps</a>
+    <?php endif; ?>
+</div>
+
+
+			<div class="popup-address">
 				<p><b>La date</b></p>
 				<?php echo $date; ?>
-    </div>
-</div>
+			</div>
+		</div>
 		<p class="popup-informations">Vous souhaitez plus d'informations concernant cet événement ?</p>
 		<?php
 		// On insère le formulaire de demandes de renseignements
-		 echo do_shortcode('[contact-form-7 id="910" title="Formulaire salon New York"]');
+		echo do_shortcode('[contact-form-7 id="910" title="Formulaire salon New York"]');
 		?>
 	</div>
 </div>
-
-
 
 
 
