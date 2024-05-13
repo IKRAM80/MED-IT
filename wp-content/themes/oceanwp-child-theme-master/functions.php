@@ -29,12 +29,12 @@ function oceanwp_child_enqueue_parent_style() {
 }
 add_action( 'wp_enqueue_scripts', 'oceanwp_child_enqueue_parent_style' );
 
-
-
+//Mise en place du bouton Nous contacter: généré dynamiquement et centré comme les autres éléments du menu
 
 function contact_btn( $items, $args ) {
-	$items .= '<a href="/contact" class="contact-btn">Nous contacter</a>';
+	$contact_url = home_url( '/contact/' );
+	$items .= '<li class="menu-item"><a href="' . esc_url( $contact_url ) . '" class="menu-link contact-btn ">Nous contacter</a></li>';
 	return $items;
 }
-
-add_filter( 'wp_nav_menu_items', 'contact_btn', 10, 2 );
+	add_filter( 'wp_nav_menu_items', 'contact_btn', 10, 2 );
+	
